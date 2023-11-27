@@ -1,9 +1,13 @@
-from datetime import datetime
-
 from mongoengine import connect, Document, StringField, ListField, ReferenceField, NULLIFY, DateField
 
-connect(db='hwWeb08',
-        host='mongodb+srv://user231113:lo0depChcZ4ysyCJ@cluster0.hc2168m.mongodb.net/?retryWrites=true&w=majority')
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+db = os.getenv('MONGO_DB')
+host = os.getenv('MONGO_URL')
+
+connect(db=db, host=host)
 
 class Author(Document):
     fullname = StringField(max_length=120, required=True)

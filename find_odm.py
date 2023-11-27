@@ -51,6 +51,7 @@ while True:
             r = find_author(a_1)
         elif a[0].strip() == 't':
             r = find_teg(a[1].strip())
+
         elif a[0].strip() == 'ts':
             find_tegs(a[1].strip())
         else:

@@ -1,6 +1,5 @@
 # завантаження даних у хмарну БВ
-from datetime import datetime, date
-from time import strptime
+from datetime import datetime
 
 from models_odm import Author, Quote
 

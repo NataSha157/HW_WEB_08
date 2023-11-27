@@ -3,7 +3,7 @@ import argparse
 from datetime import datetime
 from mongoengine import DoesNotExist
 
-from models_odm import Author, Quote, connect
+from models_odm import Author, Quote
 
 row_format = "%B %d, %Y"
 

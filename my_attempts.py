@@ -3,13 +3,19 @@
 from pymongo.mongo_client import MongoClient
 # from pymongo.server_api import ServerApi
 
-uri = "mongodb+srv://user231113:lo0depChcZ4ysyCJ@cluster0.hc2168m.mongodb.net/?retryWrites=true&w=majority"
-# hwWeb08
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+uri = os.getenv('MONGO_URL')
+db_mongo = os.getenv('MONGO_DB')
+
+
 # Create a new client and connect to the server
 client = MongoClient(uri)
 
 # Send a ping to confirm a successful connection
-db = client.hwWeb08
+db = client.db_mongo
 
 try:
     client.admin.command('ping')
